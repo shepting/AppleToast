@@ -11,8 +11,10 @@ import UIKit
 class ToastView: UIView {
     let defaultFrame = CGRect(x: 100, y: 50, width: 200, height: 100)
 
+    var stackView = UIStackView()
     let spinner = UIActivityIndicatorView()
-    let label = UILabel()
+    let mainLabel = UILabel()
+    let detailLabel = UILabel()
     let image = UIImage()
     let button = UIButton()
 }
@@ -21,26 +23,43 @@ extension ToastView {
 
     convenience init<T: Toastable>(message: T) {
         self.init()
-        self.frame = defaultFrame
-        print("Showing \(message.mainMessage())")
-        self.backgroundColor = .black
-        self.label.layer.cornerRadius = 4
-        self.addSubview(label)
 
-        self.label.textColor = .white
-        self.layer.cornerRadius = 4
-        self.label.text = message.mainMessage()
+//        self.frame = defaultFrame
+        print("Showing \(message.mainMessage())")
+        backgroundColor = .black
+        layer.cornerRadius = 4
+
+        // Main
+        mainLabel.textColor = .white
+        mainLabel.text = message.mainMessage()
+
+        // Detail
+        detailLabel.textColor = .lightGray
+        detailLabel.text = "Detail label"
+
+        // Stack View
+        stackView = UIStackView(arrangedSubviews: [mainLabel, detailLabel])
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.addArrangedSubview(mainLabel)
+        stackView.addArrangedSubview(detailLabel)
+        stackView.axis = .vertical
+        stackView.frame = self.bounds
+        addSubview(stackView)
+        stackView.spacing = 10
+        stackView.layoutMargins = UIEdgeInsetsMake(10, 10, 10, 10)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.fillSuperview()
     }
 
     override func didMoveToSuperview() {
-        self.label.translatesAutoresizingMaskIntoConstraints = false
-        self.label.fillSuperView()
+        translatesAutoresizingMaskIntoConstraints = false
+        constrainNearTop()
     }
 
 }
 
 extension UIView {
-    func fillSuperView() -> Void {
+    func fillSuperview() -> Void {
         self.fillHorizontally()
         self.fillVertically()
     }
@@ -60,6 +79,15 @@ extension UIView {
             superview.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
             superview.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
 
+        } else {
+            print("Not in a superview! No constraints being added.")
+        }
+    }
+
+    func constrainNearTop() {
+        if let superview = self.superview {
+            superview.topAnchor.constraint(equalTo: self.topAnchor, constant: -50).isActive = true
+            superview.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         } else {
             print("Not in a superview! No constraints being added.")
         }

@@ -26,7 +26,7 @@ public class Toaster {
         let topWindow = UIWindow.topWindow()
         topWindow.addSubviewToTop(toastView) {
             toastView.fadeInFromTransparent()
-            toastView.fadeOutAfterDelay()
+//            toastView.fadeOutAfterDelay()
         }
     }
 }

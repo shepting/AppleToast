@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		376C0ACB1D92F73A003B37DF /* Toast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D2028D1D840018002679D2 /* Toast.framework */; };
 		376C0ACD1D92FE35003B37DF /* Toastable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C0ACC1D92FE35003B37DF /* Toastable.swift */; };
+		376C0ACF1D930269003B37DF /* Todo.md in Resources */ = {isa = PBXBuildFile; fileRef = 376C0ACE1D930269003B37DF /* Todo.md */; };
 		37D202911D840018002679D2 /* Toast.h in Headers */ = {isa = PBXBuildFile; fileRef = 37D202901D840018002679D2 /* Toast.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37D202981D840018002679D2 /* Toast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D2028D1D840018002679D2 /* Toast.framework */; };
 		37D2029D1D840018002679D2 /* ToastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D2029C1D840018002679D2 /* ToastTests.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		376C0ACC1D92FE35003B37DF /* Toastable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toastable.swift; sourceTree = "<group>"; };
+		376C0ACE1D930269003B37DF /* Todo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Todo.md; sourceTree = "<group>"; };
 		37D2028D1D840018002679D2 /* Toast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D202901D840018002679D2 /* Toast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
 		37D202921D840018002679D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				37D202C11D84007A002679D2 /* ToastView.swift */,
 				37D202C31D874243002679D2 /* Animation.swift */,
 				376C0ACC1D92FE35003B37DF /* Toastable.swift */,
+				376C0ACE1D930269003B37DF /* Todo.md */,
 			);
 			path = Toast;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376C0ACF1D930269003B37DF /* Todo.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
