@@ -8,9 +8,9 @@
 
 import UIKit
 
-//func showMessage(message: String) {
-//    Toaster.show(message)
-//}
+func showMessage(message: String) {
+    Toaster.show(message)
+}
 
 
 public extension UIViewController {
@@ -23,22 +23,42 @@ public class Toaster {
 
     public class func show(_ message: String) -> Void {
         let toastView = ToastView(message: message)
-        toastView.alpha = 0.0
         let topWindow = UIWindow.topWindow()
-        topWindow.backgroundColor = UIColor.black
-        toastView.frame = CGRect(x: 100, y: 50, width: 200, height: 100)
-        topWindow.addSubview(toastView)
-        DispatchQueue.main.async { 
-            toastView.superview?.bringSubview(toFront: toastView)
-            UIView.animate(withDuration: 0.2, animations: {
-                toastView.alpha = 1.0
-            })
+        topWindow.addSubviewToTop(toastView) {
+            toastView.fadeInFromTransparent()
+            toastView.fadeOutAfterDelay()
         }
+    }
+}
 
+extension UIView {
+
+    func fadeInFromTransparent() {
+        self.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.alpha = 1.0
+        })
     }
 
-    
+    func fadeOutAfterDelay() {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
+            self.fadeOut()
+        }
+    }
+    func fadeOut() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.alpha = 0
+        })
+    }
 
+    func addSubviewToTop(_ view: UIView, completion: @escaping () -> ()) {
+        self.addSubview(view)
+        DispatchQueue.main.async {
+            self.bringSubview(toFront: view)
+
+            completion()
+        }
+    }
 }
 
 extension UIWindow {

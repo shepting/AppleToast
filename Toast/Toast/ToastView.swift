@@ -9,33 +9,32 @@
 import UIKit
 
 class ToastView: UIView {
+    let defaultFrame = CGRect(x: 100, y: 50, width: 200, height: 100)
 
     let spinner = UIActivityIndicatorView()
     let label = UILabel()
     let image = UIImage()
     let button = UIButton()
-
 }
 
 extension ToastView {
 
     convenience init (message: String) {
         self.init()
+        self.frame = defaultFrame
         print("Showing \(message)")
-//        self.backgroundColor = 
+        self.backgroundColor = .black
         self.label.layer.cornerRadius = 4
         self.addSubview(label)
 
-        
-//        self.label.textColor = UIaColor.gray()
-//        self.label.frame = self.frame
+        self.label.textColor = .white
+        self.layer.cornerRadius = 4
         self.label.text = message
     }
 
     override func didMoveToSuperview() {
         self.label.translatesAutoresizingMaskIntoConstraints = false
         self.label.fillSuperView()
-
     }
 
 }

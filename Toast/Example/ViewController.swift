@@ -14,9 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        Toaster.show("Done loading.")
-        self.showMessage("Finished")
-
+        showMessage("Finished")
     }
 
 }
