@@ -8,20 +8,20 @@
 
 import UIKit
 
-func showMessage(message: String) {
-    Toaster.show(message)
-}
+//func showMessage<T where T is Toastable>(message: T) {
+//    Toaster.show(message)
+//}
 
 
 public extension UIViewController {
-    public func showMessage(_ message: String) {
+    public func showMessage<T: Toastable>(_ message: T) {
         Toaster.show(message)
     }
 }
 
 public class Toaster {
 
-    public class func show(_ message: String) -> Void {
+    public class func show<T: Toastable>(_ message: T) -> Void {
         let toastView = ToastView(message: message)
         let topWindow = UIWindow.topWindow()
         topWindow.addSubviewToTop(toastView) {

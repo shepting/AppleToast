@@ -14,8 +14,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        showMessage("Finished")
+        let notification = NSNotification(name: NSNotification.Name(rawValue: "DidFinishNetwork"), object: nil, userInfo: ["details_key": "Full payload data..."])
+        showMessage(notification)
+
+//        showMessage("Finished")
     }
 
+    @IBAction func showMessageTapped(_ sender: AnyObject) {
+        showMessage("Button tapped.")
+    }
 }
 

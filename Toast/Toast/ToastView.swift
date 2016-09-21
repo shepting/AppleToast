@@ -19,17 +19,17 @@ class ToastView: UIView {
 
 extension ToastView {
 
-    convenience init (message: String) {
+    convenience init<T: Toastable>(message: T) {
         self.init()
         self.frame = defaultFrame
-        print("Showing \(message)")
+        print("Showing \(message.mainMessage())")
         self.backgroundColor = .black
         self.label.layer.cornerRadius = 4
         self.addSubview(label)
 
         self.label.textColor = .white
         self.layer.cornerRadius = 4
-        self.label.text = message
+        self.label.text = message.mainMessage()
     }
 
     override func didMoveToSuperview() {
