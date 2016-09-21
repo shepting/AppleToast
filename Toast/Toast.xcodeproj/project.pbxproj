@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		376C0ACB1D92F73A003B37DF /* Toast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D2028D1D840018002679D2 /* Toast.framework */; };
 		37D202911D840018002679D2 /* Toast.h in Headers */ = {isa = PBXBuildFile; fileRef = 37D202901D840018002679D2 /* Toast.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37D202981D840018002679D2 /* Toast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D2028D1D840018002679D2 /* Toast.framework */; };
 		37D2029D1D840018002679D2 /* ToastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D2029C1D840018002679D2 /* ToastTests.swift */; };
@@ -17,6 +18,7 @@
 		37D202B81D840037002679D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D202B61D840037002679D2 /* LaunchScreen.storyboard */; };
 		37D202C01D84006B002679D2 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D202BF1D84006B002679D2 /* Toast.swift */; };
 		37D202C21D84007A002679D2 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D202C11D84007A002679D2 /* ToastView.swift */; };
+		37D202C41D874243002679D2 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D202C31D874243002679D2 /* Animation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 		37D202B91D840037002679D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37D202BF1D84006B002679D2 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		37D202C11D84007A002679D2 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		37D202C31D874243002679D2 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376C0ACB1D92F73A003B37DF /* Toast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +111,7 @@
 				37D202921D840018002679D2 /* Info.plist */,
 				37D202BF1D84006B002679D2 /* Toast.swift */,
 				37D202C11D84007A002679D2 /* ToastView.swift */,
+				37D202C31D874243002679D2 /* Animation.swift */,
 			);
 			path = Toast;
 			sourceTree = "<group>";
@@ -208,17 +213,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Hepting;
 				TargetAttributes = {
 					37D2028C1D840018002679D2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					37D202961D840018002679D2 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					37D202AA1D840037002679D2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -275,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D202C21D84007A002679D2 /* ToastView.swift in Sources */,
+				37D202C41D874243002679D2 /* Animation.swift in Sources */,
 				37D202C01D84006B002679D2 /* Toast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,8 +353,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -394,8 +404,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -415,6 +427,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -426,6 +439,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -437,6 +451,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -444,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -454,6 +470,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hepting.Toast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -485,6 +502,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hepting.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -496,6 +514,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hepting.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -518,6 +537,7 @@
 				37D202A31D840018002679D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37D202A41D840018002679D2 /* Build configuration list for PBXNativeTarget "ToastTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +546,7 @@
 				37D202A61D840018002679D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37D202BA1D840037002679D2 /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +555,7 @@
 				37D202BC1D840037002679D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

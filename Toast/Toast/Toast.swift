@@ -8,18 +8,31 @@
 
 import UIKit
 
+//func showMessage(message: String) {
+//    Toaster.show(message)
+//}
 
+
+public extension UIViewController {
+    public func showMessage(_ message: String) {
+        Toaster.show(message)
+    }
+}
 
 public class Toaster {
 
-    public class func show(message: String) -> Void {
+    public class func show(_ message: String) -> Void {
         let toastView = ToastView(message: message)
+        toastView.alpha = 0.0
         let topWindow = UIWindow.topWindow()
-        topWindow.backgroundColor = UIColor.blackColor()
-        toastView.frame = CGRectMake(100, 50, 200, 100)
+        topWindow.backgroundColor = UIColor.black
+        toastView.frame = CGRect(x: 100, y: 50, width: 200, height: 100)
         topWindow.addSubview(toastView)
-        dispatch_async(dispatch_get_main_queue()) { 
-            toastView.superview?.bringSubviewToFront(toastView)
+        DispatchQueue.main.async { 
+            toastView.superview?.bringSubview(toFront: toastView)
+            UIView.animate(withDuration: 0.2, animations: {
+                toastView.alpha = 1.0
+            })
         }
 
     }
@@ -31,9 +44,9 @@ public class Toaster {
 extension UIWindow {
 
     class func topWindow() -> UIWindow {
-        for window in UIApplication.sharedApplication().windows.reverse() {
-            let windowOnMainScreen = window.screen == UIScreen.mainScreen()
-            let windowIsVisible = !window.hidden && window.alpha > 0
+        for window in UIApplication.shared.windows.reversed() {
+            let windowOnMainScreen = window.screen == UIScreen.main
+            let windowIsVisible = !window.isHidden && window.alpha > 0
             let windowLevelSupported = window.windowLevel >= UIWindowLevelNormal
 
             if (windowOnMainScreen && windowIsVisible && windowLevelSupported) {
@@ -41,6 +54,6 @@ extension UIWindow {
             }
         }
 
-        return UIApplication.sharedApplication().windows.first!
+        return UIApplication.shared.windows.first!
     }
 }
