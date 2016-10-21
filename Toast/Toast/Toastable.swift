@@ -26,7 +26,15 @@ extension NSNotification: Toastable {
     }
 
     public func detailMessage() -> String {
-        return "notification details"
+        let keys = userInfo?.keys
+        if let key1 = keys?.first {
+            let value1 = userInfo?[key1]!
+            return "\(key1) - \(value1!)"
+        }
+
+        return ""
+
+//        return "notification details"
     }
 }
 

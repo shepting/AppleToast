@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3763B9091DB9235000A315C3 /* SideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3763B9081DB9235000A315C3 /* SideView.swift */; };
+		3763B90B1DB9706900A315C3 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3763B90A1DB9706900A315C3 /* UIViewExtensions.swift */; };
 		376C0ACB1D92F73A003B37DF /* Toast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D2028D1D840018002679D2 /* Toast.framework */; };
 		376C0ACD1D92FE35003B37DF /* Toastable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C0ACC1D92FE35003B37DF /* Toastable.swift */; };
 		376C0ACF1D930269003B37DF /* Todo.md in Resources */ = {isa = PBXBuildFile; fileRef = 376C0ACE1D930269003B37DF /* Todo.md */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3763B9081DB9235000A315C3 /* SideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideView.swift; sourceTree = "<group>"; };
+		3763B90A1DB9706900A315C3 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		376C0ACC1D92FE35003B37DF /* Toastable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toastable.swift; sourceTree = "<group>"; };
 		376C0ACE1D930269003B37DF /* Todo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Todo.md; sourceTree = "<group>"; };
 		37D2028D1D840018002679D2 /* Toast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +122,8 @@
 				37D202C31D874243002679D2 /* Animation.swift */,
 				376C0ACC1D92FE35003B37DF /* Toastable.swift */,
 				376C0ACE1D930269003B37DF /* Todo.md */,
+				3763B9081DB9235000A315C3 /* SideView.swift */,
+				3763B90A1DB9706900A315C3 /* UIViewExtensions.swift */,
 			);
 			path = Toast;
 			sourceTree = "<group>";
@@ -288,9 +294,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3763B9091DB9235000A315C3 /* SideView.swift in Sources */,
 				37D202C21D84007A002679D2 /* ToastView.swift in Sources */,
 				376C0ACD1D92FE35003B37DF /* Toastable.swift in Sources */,
 				37D202C41D874243002679D2 /* Animation.swift in Sources */,
+				3763B90B1DB9706900A315C3 /* UIViewExtensions.swift in Sources */,
 				37D202C01D84006B002679D2 /* Toast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@
 import UIKit
 
 class ToastView: UIView {
-    let defaultFrame = CGRect(x: 100, y: 50, width: 200, height: 100)
+//    let defaultFrame = CGRect(x: 100, y: 50, width: 200, height: 100)
 
     var stackView = UIStackView()
     let spinner = UIActivityIndicatorView()
@@ -35,7 +35,7 @@ extension ToastView {
 
         // Detail
         detailLabel.textColor = .lightGray
-        detailLabel.text = "Detail label"
+        detailLabel.text = message.detailMessage()
 
         // Stack View
         stackView = UIStackView(arrangedSubviews: [mainLabel, detailLabel])
@@ -58,38 +58,4 @@ extension ToastView {
 
 }
 
-extension UIView {
-    func fillSuperview() -> Void {
-        self.fillHorizontally()
-        self.fillVertically()
-    }
 
-    func fillHorizontally() -> Void {
-        if let superview = self.superview {
-            superview.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-            superview.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-
-        } else {
-            print("Not in a superview! No constraints being added.")
-        }
-    }
-
-    func fillVertically() -> Void {
-        if let superview = self.superview {
-            superview.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-            superview.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-
-        } else {
-            print("Not in a superview! No constraints being added.")
-        }
-    }
-
-    func constrainNearTop() {
-        if let superview = self.superview {
-            superview.topAnchor.constraint(equalTo: self.topAnchor, constant: -50).isActive = true
-            superview.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        } else {
-            print("Not in a superview! No constraints being added.")
-        }
-    }
-}

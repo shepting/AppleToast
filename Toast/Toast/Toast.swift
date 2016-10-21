@@ -17,6 +17,10 @@ public extension UIViewController {
     public func showMessage<T: Toastable>(_ message: T) {
         Toaster.show(message)
     }
+
+    public func sideMessage(_ message: String) {
+        Toaster.showSideMessage(message)
+    }
 }
 
 public class Toaster {
@@ -29,37 +33,17 @@ public class Toaster {
 //            toastView.fadeOutAfterDelay()
         }
     }
-}
 
-extension UIView {
-
-    func fadeInFromTransparent() {
-        self.alpha = 0
-        UIView.animate(withDuration: 0.5, animations: {
-            self.alpha = 1.0
-        })
-    }
-
-    func fadeOutAfterDelay() {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
-            self.fadeOut()
-        }
-    }
-    func fadeOut() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.alpha = 0
-        })
-    }
-
-    func addSubviewToTop(_ view: UIView, completion: @escaping () -> ()) {
-        self.addSubview(view)
-        DispatchQueue.main.async {
-            self.bringSubview(toFront: view)
-
-            completion()
+    public class func showSideMessage(_ message: String) {
+        let sideView = SideView(message: message)
+        let topWindow = UIWindow.topWindow()
+        topWindow.addSubviewToTop(sideView) {
+            print("added")
+//            sideView.trailingAnchor.constraint(equalTo: topWindow.trailingAnchor).isActive = true
         }
     }
 }
+
 
 extension UIWindow {
 
