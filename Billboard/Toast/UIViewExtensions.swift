@@ -62,10 +62,10 @@ extension UIView {
         }
     }
 
-    func placeOnRightSide(topMargin: CGFloat = 12) {
+    func placeOnRightSide() {
         if let superview = self.superview {
             superview.topAnchor.constraint(equalTo: self.topAnchor, constant: -50).isActive = true
-            superview.rightAnchor.constraint(equalTo: self.rightAnchor, constant: topMargin).isActive = true
+            superview.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
             print("constraining near bottom")
         } else {
             print("Not in a superview! No constraints being added.")

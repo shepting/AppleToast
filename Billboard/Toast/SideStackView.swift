@@ -13,11 +13,12 @@ class SideStackView: UIStackView {
     private static let sharedStackView = SideStackView()
 
     class func addSideView(_ sideView: SideView) {
-        sharedStackView.addSubview(sideView)
-        sideView.placeOnRightSide()
+        sharedStackView.addArrangedSubview(sideView)
+//        sideView.placeOnRightSide()
     }
     override func didMoveToSuperview() {
-        fillSuperview()
+//        fillSuperview()
+        placeOnRightSide()
         print("Side stack filling superview")
     }
 }
@@ -27,10 +28,12 @@ extension SideStackView {
     convenience init() {
         self.init(frame:CGRect())
 
-        spacing = 10
+        spacing = 2
         layoutMargins = UIEdgeInsetsMake(10, 10, 10, 10)
         translatesAutoresizingMaskIntoConstraints = false
-
+        axis = .vertical
+        isLayoutMarginsRelativeArrangement = true
+        alignment = .fill
 
         UIWindow.topWindow().addSubview(self)
         print("init static side view")
