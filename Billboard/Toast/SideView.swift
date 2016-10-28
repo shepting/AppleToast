@@ -7,20 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 class SideView: UIView {
-    var stackView = UIStackView()
 
     let label = UILabel()
 }
 
 extension SideView {
     convenience init(message: String) {
-//        self.init(frame:CGRect(x: 100, y: 20, width: 300, height: 100))
 
         self.init()
 
-        alpha = 0.7
         backgroundColor = .black
         label.text = message
         addSubview(label)
@@ -30,14 +28,11 @@ extension SideView {
         layer.cornerRadius = 3
         label.translatesAutoresizingMaskIntoConstraints = false
 
-//        widthAnchor.constraint(equalToConstant: 200)
-//        heightAnchor.constraint(equalToConstant: 100)
-        print("init")
-    }
-
-    override func didMoveToSuperview() {
         translatesAutoresizingMaskIntoConstraints = false
-        constrainNearBottom()
-
     }
+
+//    override func didMoveToSuperview() {
+//        translatesAutoresizingMaskIntoConstraints = false
+//        placeOnRightSide()
+//    }
 }

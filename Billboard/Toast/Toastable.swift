@@ -6,6 +6,8 @@
 //  Copyright © 2016 Hepting. All rights reserved.
 //
 
+import UIKit
+
 public protocol Toastable {
     func mainMessage() -> String
     func detailMessage() -> String

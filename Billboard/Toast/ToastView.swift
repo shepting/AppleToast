@@ -24,8 +24,6 @@ extension ToastView {
     convenience init<T: Toastable>(message: T) {
         self.init()
 
-//        self.frame = defaultFrame
-        print("Showing \(message.mainMessage())")
         backgroundColor = .black
         layer.cornerRadius = 4
 

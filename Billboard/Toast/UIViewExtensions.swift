@@ -7,12 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
 extension UIView {
-//    func fillSuperview() -> Void {
-//        self.fillHorizontally()
-//        self.fillVertically()
-//    }
 
     func fillSuperview(padding: CGFloat = 0.0) -> Void {
         if let superview = self.superview {
@@ -59,6 +56,16 @@ extension UIView {
         if let superview = self.superview {
             superview.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 150).isActive = true
             superview.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+            print("constraining near bottom")
+        } else {
+            print("Not in a superview! No constraints being added.")
+        }
+    }
+
+    func placeOnRightSide(topMargin: CGFloat = 12) {
+        if let superview = self.superview {
+            superview.topAnchor.constraint(equalTo: self.topAnchor, constant: -50).isActive = true
+            superview.rightAnchor.constraint(equalTo: self.rightAnchor, constant: topMargin).isActive = true
             print("constraining near bottom")
         } else {
             print("Not in a superview! No constraints being added.")

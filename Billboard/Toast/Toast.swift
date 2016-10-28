@@ -19,7 +19,7 @@ public extension UIViewController {
     }
 
     public func sideMessage(_ message: String) {
-        Toaster.showSideMessage(message)
+        Toaster.showSideMessage(message, view: self.view)
     }
 }
 
@@ -34,13 +34,9 @@ public class Toaster {
         }
     }
 
-    public class func showSideMessage(_ message: String) {
+    public class func showSideMessage(_ message: String, view parentView: UIView = UIWindow.topWindow()) {
         let sideView = SideView(message: message)
-        let topWindow = UIWindow.topWindow()
-        topWindow.addSubviewToTop(sideView) {
-            print("added")
-//            sideView.trailingAnchor.constraint(equalTo: topWindow.trailingAnchor).isActive = true
-        }
+        SideStackView.addSideView(sideView)
     }
 }
 
